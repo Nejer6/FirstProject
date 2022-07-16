@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person {{ objects.first.owner.full_name }} Pet List</title>
+</head>
+<body>
+ <a href="{% url 'person:persons' %}">Person List</a>
+ <a href="{% url 'person:detail:detail' objects.first.owner.id %}">Person {{objects.first.owner.full_name}}</a>
+
+<ul>
+    {% for object in objects.all %}
+    <li>
+        <a href="{% url 'person:detail:person-pets:pet' object.owner.id object.id %}">{{ object.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

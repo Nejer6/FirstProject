@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person List</title>
+</head>
+<body>
+<ul>
+    {% for object in objects %}
+    <li>
+        <a href="{% url 'person:detail:detail' object.id %}">{{ object.full_name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

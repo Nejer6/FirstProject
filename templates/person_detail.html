@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person {{ object.full_name }}</title>
+</head>
+<body>
+    <a href="{% url 'person:persons' %}">Person List</a>
+    <h1>{{ object.id }}: {{ object.full_name }}</h1>
+    {% if object.pets %}
+    <a href="{% url 'person:detail:person-pets:pets' object.id %}">Pets</a>
+    {% endif %}
+</body>
+</html>
